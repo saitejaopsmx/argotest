@@ -10,11 +10,11 @@ spec:
     - name: oes-analysis-isd
       provider:
         opsmx:
-          gate_url: https://ds312.isd-dev.opsmx.net/
+          gateUrl: https://ds312.isd-dev.opsmx.net/
           application: testapp
-          baseline_start_time: "{{args.start-time}}"
-          canary_start_time: "{{args.start-time}}"
-          end_time: "{{args.end-time}}"
+          baselineStartTime: "{{args.start-time}}"
+          canaryStartTime: "{{args.start-time}}"
+          endTime: "{{args.end-time}}"
           threshold:
             pass: 80
             marginal: 60
