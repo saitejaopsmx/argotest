@@ -10,7 +10,7 @@ spec:
       provider:
         opsmx:
           gateUrl: https://ds312.isd-dev.opsmx.net/
-          application: testapp
+          application: canaryappfordemo
           user: admin
           baselineStartTime: "{{args.start-time}}"
           canaryStartTime: "{{args.start-time}}"
