@@ -12,6 +12,7 @@ spec:
         opsmx:
           gateUrl: https://ds312.isd-dev.opsmx.net/
           application: testapp
+          user: admin
           baselineStartTime: "{{args.start-time}}"
           canaryStartTime: "{{args.start-time}}"
           endTime: "{{args.end-time}}"
