@@ -9,7 +9,7 @@ spec:
   metrics:
     - name: oes-analysis-isd
       provider:
-        isd:
+        opsmx:
           gate_url: https://ds312.isd-dev.opsmx.net/
           application: testapp
           baseline_start_time: "{{args.start-time}}"
