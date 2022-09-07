@@ -4,8 +4,8 @@ metadata:
   name: test-analysis-for-canary
 spec:
   args:
-    - name: canary-hash
-    - name: baseline-hash
+    - name: start-time
+    - name: experiment-hash
   metrics:
     - name: test-analysis-for-canary
       count: 1
@@ -15,6 +15,8 @@ spec:
           gateUrl: https://ds312.isd-dev.opsmx.net/
           application: demoappforcanary
           user: admin
+          baselineStartTime: "{{args.start-time}}"
+          canaryStartTime: "{{args.start-time}}"
           lifetimeHours: "0.05"
           threshold:
             pass: 80
@@ -23,8 +25,8 @@ spec:
           - serviceName: demoservice
             gateName: demo-gate
             logScopeVariables: "kubernetes.pod_name"
-            baselineLogScope: "oes-argo-rollout-{{args.baseline-hash}}.*" 
-            canaryLogScope: "oes-argo-rollout-{{args.canary-hash}}.*"
+            baselineLogScope: ".*{{args.experiment-hash}}.*baseline.*" 
+            canaryLogScope: ".*{{args.experiment-hash}}.*canary.*"
             metricScopeVariables: "namespace_key,pod_key"
-            baselineMetricScope: "argocd,oes-argo-rollout-{{args.baseline-hash}}.*"
-            canaryMetricScope: "argocd,oes-argo-rollout-{{args.canary-hash}}.*"
+            baselineMetricScope: "argocd,.*{{args.experiment-hash}}.*baseline.*"
+            canaryMetricScope: "argocd,.*{{args.experiment-hash}}.*canary.*"
