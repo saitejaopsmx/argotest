@@ -32,7 +32,7 @@ spec:
             analyses:
             - name : oes-analysis-isd
               requiredForCompletion: true
-              templateName: test-analysis-for-canary
+              templateName: oes-analysis-isd
               args:
                 - name: start-time
                   value: "{{experiment.availableAt}}"
