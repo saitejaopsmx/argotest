@@ -32,10 +32,13 @@ spec:
             analyses:
             - name : oes-analysis-isd
               requiredForCompletion: true
-              templateName: oes-analysis-isd
+              templateName: test-analysis-for-canary
               args:
                 - name: start-time
                   value: "{{experiment.availableAt}}"
+                - name: experiment-hash
+                  valueFrom:
+                    podTemplateHashValue: Latest
             templates:
               - name: baseline
                 specRef: stable
